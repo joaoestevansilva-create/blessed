@@ -278,26 +278,29 @@ linha.style.display=texto.includes(filtro)?"":"none";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Basket Stars 🏀</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Jogadores de Basquete</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #0b0b0f;
+            background: #0d0d0d;
             color: white;
         }
 
         header {
-            background: linear-gradient(135deg, #ff6b00, #ff2d00);
-            padding: 30px 8%;
+            background: linear-gradient(135deg, #ff6a00, #ff2600);
             text-align: center;
+            padding: 40px 20px;
         }
 
         header h1 {
@@ -307,29 +310,12 @@ linha.style.display=texto.includes(filtro)?"":"none";
 
         header p {
             font-size: 18px;
-            opacity: 0.9;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
-            margin: 35px auto;
-        }
-
-        .search {
-            width: 100%;
-            padding: 16px 20px;
-            border: none;
-            border-radius: 12px;
-            background: #1b1b22;
-            color: white;
-            font-size: 16px;
-            outline: none;
-            margin-bottom: 30px;
-        }
-
-        .search:focus {
-            box-shadow: 0 0 0 2px #ff6b00;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .players {
@@ -338,65 +324,52 @@ linha.style.display=texto.includes(filtro)?"":"none";
             gap: 25px;
         }
 
-        .player-card {
-            background: #17171d;
-            border-radius: 18px;
+        .card {
+            background: #1a1a1a;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             transition: 0.3s;
-            border: 1px solid #292932;
         }
 
-        .player-card:hover {
-            transform: translateY(-8px);
-            border-color: #ff6b00;
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.2);
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
         }
 
-        .player-card img {
+        .card img {
             width: 100%;
-            height: 300px;
+            height: 320px;
             object-fit: cover;
-            display: block;
         }
 
-        .player-info {
+        .info {
             padding: 20px;
         }
 
-        .player-info h2 {
-            font-size: 24px;
-            margin-bottom: 8px;
+        .info h2 {
+            color: #ff6a00;
+            margin-bottom: 10px;
         }
 
-        .team {
-            color: #ff6b00;
+        .info p {
+            color: #ccc;
+            margin: 7px 0;
+        }
+
+        .number {
+            font-size: 35px;
             font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .details {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 14px;
+            color: white;
+            float: right;
         }
 
         footer {
             text-align: center;
-            padding: 35px;
-            margin-top: 50px;
-            background: #111116;
+            padding: 30px;
+            background: #050505;
+            margin-top: 40px;
             color: #888;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
-
-            .player-card img {
-                height: 280px;
-            }
         }
     </style>
 </head>
@@ -404,167 +377,72 @@ linha.style.display=texto.includes(filtro)?"":"none";
 <body>
 
     <header>
-        <h1>🏀 Basket Stars</h1>
-        <p>Conheça alguns dos maiores jogadores profissionais de basquete</p>
+        <h1>🏀 Estrelas do Basquete</h1>
+        <p>Conheça alguns dos maiores jogadores profissionais</p>
     </header>
 
     <main class="container">
 
-        <input
-            type="text"
-            id="search"
-            class="search"
-            placeholder="🔎 Pesquisar jogador..."
-        >
+        <section class="players">
 
-        <section class="players" id="players">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/LeBron_James_2022.jpg"
+                     alt="LeBron James">
 
-            <!-- Stephen Curry -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
-                    alt="Stephen Curry jogando basquete"
-                >
-
-                <div class="player-info">
-                    <h2>Stephen Curry</h2>
-                    <p class="team">Golden State Warriors</p>
-
-                    <div class="details">
-                        <span>Armador</span>
-                        <span>NBA</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- LeBron James -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1518407613690-d9fc990e795f?auto=format&fit=crop&w=800&q=80"
-                    alt="Jogador profissional de basquete"
-                >
-
-                <div class="player-info">
+                <div class="info">
+                    <span class="number">23</span>
                     <h2>LeBron James</h2>
-                    <p class="team">Los Angeles Lakers</p>
-
-                    <div class="details">
-                        <span>Ala</span>
-                        <span>NBA</span>
-                    </div>
+                    <p><strong>Posição:</strong> Ala</p>
+                    <p><strong>País:</strong> Estados Unidos 🇺🇸</p>
+                    <p><strong>Equipe:</strong> Los Angeles Lakers</p>
                 </div>
-            </article>
+            </div>
 
-            <!-- Giannis -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=800&q=80"
-                    alt="Jogador profissional de basquete"
-                >
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Stephen_Curry_2022.jpg"
+                     alt="Stephen Curry">
 
-                <div class="player-info">
-                    <h2>Giannis Antetokounmpo</h2>
-                    <p class="team">Milwaukee Bucks</p>
-
-                    <div class="details">
-                        <span>Ala-pivô</span>
-                        <span>NBA</span>
-                    </div>
+                <div class="info">
+                    <span class="number">30</span>
+                    <h2>Stephen Curry</h2>
+                    <p><strong>Posição:</strong> Armador</p>
+                    <p><strong>País:</strong> Estados Unidos 🇺🇸</p>
+                    <p><strong>Equipe:</strong> Golden State Warriors</p>
                 </div>
-            </article>
+            </div>
 
-            <!-- Kevin Durant -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
-                    alt="Jogador profissional de basquete"
-                >
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kevin_Durant_2019.jpg"
+                     alt="Kevin Durant">
 
-                <div class="player-info">
+                <div class="info">
+                    <span class="number">35</span>
                     <h2>Kevin Durant</h2>
-                    <p class="team">Houston Rockets</p>
-
-                    <div class="details">
-                        <span>Ala</span>
-                        <span>NBA</span>
-                    </div>
+                    <p><strong>Posição:</strong> Ala</p>
+                    <p><strong>País:</strong> Estados Unidos 🇺🇸</p>
+                    <p><strong>Equipe:</strong> Houston Rockets</p>
                 </div>
-            </article>
+            </div>
 
-            <!-- Luka Doncic -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1518065896235-a4c93e088e7c?auto=format&fit=crop&w=800&q=80"
-                    alt="Jogador profissional de basquete"
-                >
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Giannis_Antetokounmpo_2022.jpg"
+                     alt="Giannis Antetokounmpo">
 
-                <div class="player-info">
-                    <h2>Luka Dončić</h2>
-                    <p class="team">Los Angeles Lakers</p>
-
-                    <div class="details">
-                        <span>Armador</span>
-                        <span>NBA</span>
-                    </div>
+                <div class="info">
+                    <span class="number">34</span>
+                    <h2>Giannis Antetokounmpo</h2>
+                    <p><strong>Posição:</strong> Ala-pivô</p>
+                    <p><strong>País:</strong> Grécia 🇬🇷</p>
+                    <p><strong>Equipe:</strong> Milwaukee Bucks</p>
                 </div>
-            </article>
-
-            <!-- Nikola Jokic -->
-            <article class="player-card">
-                <img
-                    src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=800&q=80"
-                    alt="Jogador profissional de basquete"
-                >
-
-                <div class="player-info">
-                    <h2>Nikola Jokić</h2>
-                    <p class="team">Denver Nuggets</p>
-
-                    <div class="details">
-                        <span>Pivô</span>
-                        <span>NBA</span>
-                    </div>
-                </div>
-            </article>
+            </div>
 
         </section>
+
     </main>
 
     <footer>
-        <p>🏀 Basket Stars © 2026</p>
-        <p>Site criado para fins demonstrativos.</p>
+        <p>🏀 Página de fãs de basquete</p>
     </footer>
 
-    <script>
-        const search = document.getElementById("search");
-        const players = document.querySelectorAll(".player-card");
-
-        search.addEventListener("input", function () {
-
-            const text = search.value.toLowerCase();
-
-            players.forEach(function(card) {
-
-                const name = card
-                    .querySelector("h2")
-                    .textContent
-                    .toLowerCase();
-
-                const team = card
-                    .querySelector(".team")
-                    .textContent
-                    .toLowerCase();
-
-                if (name.includes(text) || team.includes(text)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-
-        });
-    </script>
-
-</body>
-</html>
-```
+</body
