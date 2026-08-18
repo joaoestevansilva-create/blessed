@@ -446,3 +446,115 @@ linha.style.display=texto.includes(filtro)?"":"none";
     </footer>
 
 </body
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lendas do Basquete</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .jogadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            padding: 45px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: #1f1f1f;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(255, 106, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            color: #ff8500;
+            margin: 18px 0 8px;
+        }
+
+        .card p {
+            color: #ccc;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🏀 Estrelas do Basquete</h1>
+        <p>Os grandes nomes do basquete mundial</p>
+    </header>
+
+    <main class="jogadores">
+
+        <!-- LeBron James -->
+        <div class="card">
+            <img src="imagens/lebron-james.jpg" alt="LeBron James">
+            <h2>LeBron James</h2>
+            <p>Los Angeles Lakers</p>
+        </div>
+
+        <!-- Stephen Curry -->
+        <div class="card">
+            <img src="imagens/stephen-curry.jpg" alt="Stephen Curry">
+            <h2>Stephen Curry</h2>
+            <p>Golden State Warriors</p>
+        </div>
+
+        <!-- Kevin Durant -->
+        <div class="card">
+            <img src="imagens/kevin-durant.jpg" alt="Kevin Durant">
+            <h2>Kevin Durant</h2>
+            <p>Houston Rockets</p>
+        </div>
+
+        <!-- Giannis Antetokounmpo -->
+        <div class="card">
+            <img src="imagens/giannis-antetokounmpo.jpg" alt="Giannis Antetokounmpo">
+            <h2>Giannis Antetokounmpo</h2>
+            <p>Milwaukee Bucks</p>
+        </div>
+
+    </main>
+
+</body>
+</html>
